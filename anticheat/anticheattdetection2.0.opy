@@ -2,6 +2,7 @@
 
 #!include "anticheat/gotdetectedbyanticheat"
 #!include "anticheat/stopusingcheats"
+#!include "anticheat/spawnbugfixes"
 
 #Player variables
 playervar HackDetection 2

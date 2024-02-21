@@ -4,14 +4,14 @@
 
 playervar IsUsingHack 3
 
-rule "[d.va/d.vaallowscheats.opy] D.va Allow Cheats":
+
+rule "[junkrat/junkstop.opy] junkrat stop ":
     @Event eachPlayer
-    @Hero dva
+    @Hero junkrat
     @Condition eventPlayer.IsUsingHack == 1
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     
-    eventPlayer.setDamageReceived(100)
-    wait(0.2)
+    destroyHudText(getLastCreatedText())
+    eventPlayer.stopCamera()
+    wait(0.25)
     eventPlayer.IsUsingHack = 0
-
-

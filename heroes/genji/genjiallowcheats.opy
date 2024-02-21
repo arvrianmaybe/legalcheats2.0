@@ -4,14 +4,14 @@
 
 playervar IsUsingHack 3
 
-rule "[d.va/d.vaallowscheats.opy] D.va Allow Cheats":
+
+rule "[genji/genjiallowscheats.opy] Genji Allow Cheats":
     @Event eachPlayer
-    @Hero dva
+    @Hero genji
     @Condition eventPlayer.IsUsingHack == 1
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     
-    eventPlayer.setDamageReceived(100)
-    wait(0.2)
+    eventPlayer.stopForcingButton(Button.SECONDARY_FIRE)
+    eventPlayer.stopFacing()
+    wait(0.25)
     eventPlayer.IsUsingHack = 0
-
-

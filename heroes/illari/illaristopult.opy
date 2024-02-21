@@ -4,14 +4,15 @@
 
 playervar IsUsingHack 3
 
-rule "[d.va/d.vaallowscheats.opy] D.va Allow Cheats":
+
+rule "[illaristopult.opy] illari abort ult":
     @Event eachPlayer
-    @Hero dva
+    @Hero illari
     @Condition eventPlayer.IsUsingHack == 1
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     
-    eventPlayer.setDamageReceived(100)
-    wait(0.2)
+    eventPlayer.setUltCharge(0)
+    wait(0.25)
     eventPlayer.IsUsingHack = 0
 
 
