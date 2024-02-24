@@ -2,6 +2,8 @@
 
 #!include "heroes/mauga/maugacastfire.opy"
 #!include "heroes/mauga/maugaautoaimsecondaryfire.opy"
+#!include "heroes/mauga/notmauga.opy"
+#!include "heroes/mauga/maugadisallow.opy"
 rule "[mauga/maugaautoaim.opy] mauga aimbot but bad":
     @Event eachPlayer
     @Hero mauga

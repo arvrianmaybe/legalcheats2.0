@@ -1,7 +1,5 @@
 #!mainFile "../../main.opy"
 
-#!include "heroes/juunkerqueen/junkerqueenlost.opy"
-#!include "heroes/junkerqueen/junkerqueenwon.opy"
 #Player variables
 
 playervar Duel 0
@@ -11,21 +9,20 @@ playervar IsUsingHack 3
 playervar LockOut 4
 
 
-rule "[junkerqueen/junkerqueensumo.opy] junker queen sumo fight":
+rule "[rammatra/rammatrasoloult.opy] rammatra solo ult":
     @Event eachPlayer
-    @Hero junkerQueen
+    @Hero rammatra
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     @Condition eventPlayer.HackDetection >= 100
     
-    eventPlayer.HackDetection = 1
-    eventPlayer.setUltEnabled(false)
+    eventPlayer.HackDetection = -1
+    eventPlayer.setUltCharge(100)
+    eventPlayer.forceButtonPress(Button.ULTIMATE)
     wait(0.1)
     eventPlayer.Duel[0] = eventPlayer.getPlayerClosestToReticle(getOppositeTeam(eventPlayer.getTeam()))
     eventPlayer.IsDueling = true
     eventPlayer.Duel[0].setHealth(eventPlayer.Duel[0].getMaxHealth())
     eventPlayer.setHealth(eventPlayer.getMaxHealth())
-    bigMessage(getAllPlayers(), "{0} targeted {1}".format("{0} {1}".format(heroIcon(eventPlayer.getCurrentHero()), eventPlayer), "{0} {1}".format(heroIcon(eventPlayer.Duel[0].getCurrentHero()), eventPlayer.Duel[0])))
-    eventPlayer.cancelPrimaryAction()
     #look at duel
     eventPlayer.setFacing(directionTowards(eventPlayer.getEyePosition(), eventPlayer.Duel[0].getEyePosition()), Relativity.TO_WORLD)
     #look at cre
@@ -66,3 +63,4 @@ rule "[junkerqueen/junkerqueensumo.opy] junker queen sumo fight":
     bigMessage(getAllPlayers(), " {0} targeted {1} is over".format("{0} {1}".format(heroIcon(eventPlayer.getCurrentHero()), eventPlayer), "{0} {1}".format(heroIcon(eventPlayer.Duel[0].getCurrentHero()), eventPlayer.Duel[0])))
     eventPlayer.setUltEnabled(true)
     wait(0.25)
+    eventPlayer.IsUsingHack = 1

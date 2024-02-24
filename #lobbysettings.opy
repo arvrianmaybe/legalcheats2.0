@@ -36,8 +36,15 @@ settings {
         "allTeams": {
             "echo": {
                 "enableAbility1": false
+            },
+            "lifeweaver": {
+                "enableAbility2": false
             }
         }
     }
 }
 
+#Activated extensions
+
+#!extension beamEffects
+#!extension projectiles
