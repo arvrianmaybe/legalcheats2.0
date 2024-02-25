@@ -2,8 +2,8 @@
 
 #Global variables
 
-globalvar Totalmayhem 33
+globalvar Nolimits 26
 
 
-rule "[workshopsettings/worskhopnolimits.opy] no limits":
-    Totalmayhem[99] = createWorkshopSetting(bool, "ARCADE MODES", "no limits", false, 99)
+rule "[workshopsettings/nolimits.opy] no limits":
+    Nolimits[99] = createWorkshopSetting(bool, "ARCADE MODES", "no limits", false, 99)

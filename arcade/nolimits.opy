@@ -11,3 +11,6 @@ rule "[arcade/nolimits.opy] no limits":
     
     eventPlayer.setAllowedHeroes(getAllHeroes())
     hudSubheader(getAllPlayers(), "NO LIMITS ENABLED", HudPosition.TOP, 0, Color.WHITE, HudReeval.VISIBILITY_AND_STRING, SpecVisibility.DEFAULT)
+    destroyAllHudTexts()
+    wait(0.25)
+    hudSubheader(getAllPlayers(), "NO LIMITS ENABLED", HudPosition.TOP, 0, Color.WHITE, HudReeval.VISIBILITY_AND_STRING, SpecVisibility.DEFAULT)
