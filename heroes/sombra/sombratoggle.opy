@@ -1,6 +1,10 @@
 #!mainFile "../../main.opy"
 
 #!include "heroes/sombra/sombraworkshop.opy"
+#!include "heroes/sombra/initsombra.opy"
+#!include "heroes/sombra/sombraallow.opy"
+#!include "heroes/sombra/sombrastart.opy"
+
 
 #Global variables
 
