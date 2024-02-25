@@ -5,14 +5,12 @@
 playervar IsUsingHack 3
 
 
-rule "[roadhog/roadhogallow.opy] roadhog Allow Cheats":
+rule "[sojourb/sojournallow.opy] sojourn Allow Cheats":
     @Event eachPlayer
-    @Hero roadhog
+    @Hero sojourn
     @Condition eventPlayer.IsUsingHack == 1
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     
-    eventPlayer.setDamageDealt(100)
+    eventPlayer.setInvisibility(Invis.NONE)
     wait(0.2)
     eventPlayer.IsUsingHack = 0
-
-

@@ -7,4 +7,4 @@ rule "[tracer/tracerblink.opy] tracer controls time":
     @Hero tracer
     @Condition eventPlayer.isUsingAbility1() == true
     
-    setMatchTime(getMatchTime() + 8)
+    setMatchTime(getMatchTime() + 1)

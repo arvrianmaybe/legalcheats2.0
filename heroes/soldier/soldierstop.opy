@@ -5,14 +5,12 @@
 playervar IsUsingHack 3
 
 
-rule "[roadhog/roadhogallow.opy] roadhog Allow Cheats":
+rule "[soldier/soldierstop.opy] soldier stop":
     @Event eachPlayer
-    @Hero roadhog
+    @Hero soldier
     @Condition eventPlayer.IsUsingHack == 1
     @Condition eventPlayer.isHoldingButton(Button.INTERACT) == true
     
-    eventPlayer.setDamageDealt(100)
-    wait(0.2)
+    eventPlayer.stopFacing()
+    wait(0.25)
     eventPlayer.IsUsingHack = 0
-
-
