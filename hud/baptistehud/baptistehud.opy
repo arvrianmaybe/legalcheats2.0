@@ -1,0 +1,8 @@
+#!mainFile "../../main.opy"
+
+rule "[baptistehud/baptistehud.opy] baptiste hud":
+    @Event eachPlayer
+    @Condition eventPlayer.getCurrentHero() == Hero.BAPTISTE
+    @Condition eventPlayer.isInSpawnRoom() == true
+    
+    hudHeader(eventPlayer, "{0} PRESSING INTERACT KILLS THE PLAYER CLOSEST TO YOUR RETICLE".format(heroIcon(Hero.BAPTISTE)), HudPosition.TOP, 0, Color.WHITE, HudReeval.VISIBILITY_AND_STRING, SpecVisibility.DEFAULT)
